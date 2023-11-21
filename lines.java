@@ -16,6 +16,11 @@ class Lines {
                 double ans=Math.pow((a2-a1),2)+Math.pow((b2-b1),2);
                 return Math.sqrt(ans);
         }
+	public boolean compareUsingCT(double l2) {
+		Double l1=lengthOfLines();
+		Double l3=l2;
+		return (l1.compareTo(l3)==0);
+	}
 	public static void main(String[] args) {
 		System.out.println("===Welcome to Comparison Computation Program===");
 		Lines ob=new Lines(Integer.parseInt(args[0]),Integer.parseInt(args[1]),Integer.parseInt(args[2]),Integer.parseInt(args[3]));
@@ -26,6 +31,8 @@ class Lines {
 		int y1=input.nextInt();
 		int x2=input.nextInt();
 		int y2=input.nextInt();
-		System.out.printf("Length of both the lines is preferrable?: %b",ob.lengthOfLines()==ob.lineLength(x1,y1,x2,y2));
+		System.out.printf("Length of both the lines is preferrable?: %b\n",ob.lengthOfLines()==ob.lineLength(x1,y1,x2,y2));
+		System.out.printf("Length of both the lines is preferrable? (using compareTo): %b\n",ob.compareUsingCT(ob.lineLength(x1,y1,x2,y2)));
+		input.close();
 	}
 }
